@@ -1,11 +1,4 @@
 <?php
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of account
  *
@@ -58,13 +51,22 @@ class Account {
     
     public function withdraw ($amount)
     {
-        if($this->balance - $amount >0 )
+        if($this->balance - $amount >=0 )
        {
             
        $this->balance = $this->balance - $amount; 
+       
+        return 'Withdrawn';
              
         }
-        return $this->balance;
+        
+    else 
+    {
+        
+     return 'Insufficient Balance';
+     
+    }
+       
     }
 
 }

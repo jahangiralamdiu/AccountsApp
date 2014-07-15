@@ -7,7 +7,9 @@ and open the template in the editor.
 <html>
     <head>
         <meta charset="UTF-8">
-        <title></title>
+        
+        <title>Accounts App</title>
+        
     </head>
     <body>
         
@@ -52,13 +54,13 @@ and open the template in the editor.
         
         if(isset($_GET['withdrawButton']))
         {
-            $_SESSION ['an_account']->withdraw($_GET['amountText']);
-            echo "Withdrawn";
+            echo $_SESSION ['an_account']->withdraw($_GET['amountText']);
+            
         }
         
         if(isset($_GET['showReportButton']))
         {
-            echo $_SESSION ['an_account']->get_account_name()."br/".' Your Balance is : '.$_SESSION ['an_account']->get_balance();
+            echo $_SESSION ['an_account']->get_account_name().', account no '.$_SESSION ['an_account']->get_account_number()."<br/>".' Your Balance is : '.$_SESSION ['an_account']->get_balance();
         }
         
         
